@@ -199,8 +199,8 @@ body {
 
 .messages > li {
   font-size: 15px;
-  color: rgb(13, 223, 153);
-  background: #f7a30675;
+  color: rgb(2, 4, 92);
+  background: #fff;
   border-radius: 5px;
   width: fit-content;
 }

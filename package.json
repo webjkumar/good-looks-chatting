@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node app &"
   },
-  "author": "",
+  "author": "Jayakumar",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
