@@ -1,8 +1,8 @@
 var socket = io();
 var messages = document.getElementById("messages");
 
-(function() {
-  $("form").submit(function(e) {
+(function () {
+  $("form").submit(function (e) {
     let li = document.createElement("li");
     e.preventDefault(); // prevents page reloading
     socket.emit("chat message", $("#message").val());
@@ -12,6 +12,11 @@ var messages = document.getElementById("messages");
     messages.appendChild(span).append("by " + "Anonymous" + ": " + "just now");
 
     $("#message").val("");
+
+    setTimeout(function () {
+      var messages = document.getElementById("messages");
+      messages.scrollTop = messages.scrollHeight;
+    }, 200);
 
     return false;
   });
@@ -23,11 +28,16 @@ var messages = document.getElementById("messages");
     messages.appendChild(li).append(data.message);
     messages.appendChild(span).append("by " + "anonymous" + ": " + "just now");
     console.log("Hello bingo!");
+
+    setTimeout(function () {
+      var messages = document.getElementById("messages");
+      messages.scrollTop = messages.scrollHeight;
+    }, 200);
   });
 })();
 
 // fetching initial chat messages from the database
-(function() {
+(function () {
   fetch("/chats")
     .then(data => {
       return data.json();
